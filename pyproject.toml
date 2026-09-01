@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wixq"
+version = "0.1.0"
+description = "A focused, resumable reader for authorised ZSXQ groups"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Huachuan213" }]
+dependencies = [
+  "requests>=2.31",
+]
+
+[project.optional-dependencies]
+browser = ["playwright>=1.40"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+wixq = "wixq.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["wixq"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

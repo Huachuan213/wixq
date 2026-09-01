@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+
+# Authentication and user data must remain local.
+sessions/
+reports/
+output/
+raw_pages/
+posts/
+state.json
+failed_topics.json
+topics.jsonl
